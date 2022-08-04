@@ -7,7 +7,8 @@ const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
     password: 'rootroot',
-    database: 'more_sauce_library'
+    database: 'more_sauce_library',
+    port: 3306
 })
 
 router.post('/', (req, res) => {
@@ -34,6 +35,12 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    db.query
+    db.query('SELECT __ FROM sauce_comments', (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(result)
+        }
+    })
 })
 

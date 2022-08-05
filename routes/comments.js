@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const mysql = require('mysql');
 // const fs = require('fs')
 // const { v4: uuid } = require('uuid');
 
@@ -44,3 +45,4 @@ router.get('/', (req, res) => {
     })
 })
 
+module.exports = router;
